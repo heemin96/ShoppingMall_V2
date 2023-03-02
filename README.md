@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Shopping Mall
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<p align="center">
+  <br>
+<img src="https://user-images.githubusercontent.com/101728625/207009019-1a343bea-55b1-4f5e-ac09-7c4920c3a81b.png"/>
+  <br>
+</p>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 목차
+- [프로젝트 소개](#프로젝트-소개)
+- [기술스택](#기술-스택)
+- [구현기능](#구현-기능)
+- [느낀점](#느낀점)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 프로젝트 소개
 
-### `npm run build`
+<p align="justify">
+프로젝트 개요/동기
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Index | Detail                                                                                                                                                                                           |
+|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 구현 기간 | **2022.12.23 ~ 2023.01.12**  개선 2023.03 ~                                                                                                                                                                                                                                                                                                                                         
+| 요약 |React Router, React Query, Firbase, Cloudinary 사용해 ShoppingMall 만들기 | 
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+## 기술 스택
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| JavaScript |  React   |  Node   |  Firebase  |  Cloudinary  | 
+| :--------: | :------: | :-----: |  :------:  |  :--------:  |
+|   <img src="https://user-images.githubusercontent.com/101728625/205824814-ff390f33-e823-42f6-850d-eb906733f377.png">   | <img src="https://user-images.githubusercontent.com/101728625/205825066-16686d43-2f6b-4e8c-bd23-60afe900cd87.png"> | <img src="https://user-images.githubusercontent.com/101728625/205825143-b99d9b06-7ad1-4c37-879e-f51e3d5317e4.png"> |  <img src="https://user-images.githubusercontent.com/101728625/207011112-6d7b0234-ba77-4b8f-9597-286a6e5a4e80.png"  width='100px'/> | <img src="https://user-images.githubusercontent.com/101728625/207012209-c4bc68ca-2831-46a7-9a1d-8a99f462d452.png" width='100px' />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 구현 기능
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ 
+  
+### 기능 1
+- Grid를 통한 반응형 웹페이지
+- em , rem , % 단위만 사용해서 반응형 웹페이지 만들기
 
-### Analyzing the Bundle Size
+### 기능 2
+- React Query를 통해 데이터 관리하기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 기능 3
+- Cloudnary이용해 이미지 업로드하기
 
-### Making a Progressive Web App
+### 기능 4
+- FireBase를 이용해 데이터 저장하기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
+## 느낀점
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- 좋았던 점
+<p align="justify">
+  
+1. Firebase api를 사용해 데이터 저장,수정,삭제 경험
 
-### `npm run build` fails to minify
+2. cloudinary api 사용해 이미지 업로드 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. react query mutation 을 사용해 실시간 데이터 관리 
+
+4. react 컨벤션, 폴더링, 컴포넌트 구조 등 전보다 개념적 지식 구체적 확립
+</p>
+
+<br/>
+
+- 개선하고 싶은 점
+<p align="justify">
+  
+1. 게시글 수정,삭제 기능 추가
+
+2. 게시물 검색 기능
+
+3. 카테고리
+
+4. 사이드바 
+
+5. 마이페이지
+
+6. etc..
+
+
+
+</p>
