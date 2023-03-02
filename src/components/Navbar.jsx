@@ -15,8 +15,8 @@ export default function Navbar() {
   return (
     <N.Header>
       <N.LogoLink to="/">
-        <FiShoppingBag />
-        <h1> A.S.P </h1>
+        {/* <FiShoppingBag /> */}
+        <h1> H.S.P </h1>
       </N.LogoLink>
       <N.Nav>
         <Link to="/products">Products</Link>

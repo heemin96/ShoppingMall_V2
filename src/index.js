@@ -10,6 +10,7 @@ import NewProduct from "./pages/NewProduct";
 import MyCart from "./pages/MyCart";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import ModifyProduct from "./pages/ModifyProduct";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <ProductDetail />,
+      },
+
+      {
+        path: "/products/modify/:id",
+        element: <ModifyProduct />,
       },
 
       {

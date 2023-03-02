@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../api/firebase";
 import ProductCard from "./ProductCard";
 import useProducts from "../hooks/useProducts";
 
@@ -23,25 +21,6 @@ export default function Products() {
     </>
   );
 }
-
-// function Products(props) {
-//   const {
-//     productsQuery: { isLoading, error, data: products },
-//   } = useProducts();
-//   return (
-//     <>
-//       {isLoading && <p>Loading...</p>}
-//       {error && <p>{error}</p>}
-
-//       <Ul>
-//         {products &&
-//           products.map((product) => (
-//             <ProductCard key={product.id} product={product} />
-//           ))}
-//       </Ul>
-//     </>
-//   );
-// }
 
 const Ul = styled.ul`
   display: grid;

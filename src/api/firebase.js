@@ -74,6 +74,10 @@ export async function addNewProduct(product, imageUrl) {
   });
 }
 
+export async function deleteProduct(productId) {
+  return remove(ref(database, `products/${productId}`));
+}
+
 export async function getProducts() {
   return get(ref(database, "products"))
     .then((snapshot) => {
@@ -89,7 +93,7 @@ export async function getCart(userId) {
   return get(ref(database, `carts/${userId}`)) //
     .then((snapshot) => {
       const items = snapshot.val() || {};
-      console.log(items);
+      // console.log(items);
       return Object.values(items);
     });
 }

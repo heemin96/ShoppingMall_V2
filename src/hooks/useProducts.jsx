@@ -11,7 +11,7 @@ export default function useProducts() {
   const addProduct = useMutation(
     ({ product, url }) => addNewProduct(product, url),
     {
-      //products라는 키를 가진 cash를  invaildate한다.
+      //products라는 키를 가진 cash를 invaildate한다.
       onSuccess: () => queryClient.invalidateQueries(["products"]),
     }
   );

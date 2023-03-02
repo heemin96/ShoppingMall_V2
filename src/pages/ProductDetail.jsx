@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import styled from "styled-components";
 import { useAuthContext } from "../context/AuthContext";
 import Button from "../components/ui/Button";
-import { addOrUpdateToCart } from "../api/firebase";
-
+import { addOrUpdateToCart, deleteProduct } from "../api/firebase";
 import useCart from "../hooks/useCart";
+import { MdDeleteForever } from "react-icons/md";
+import { BsPencilSquare } from "react-icons/bs";
 
 function ProductDetail() {
+  const navigate = useNavigate();
   const { addOrUpdateItem } = useCart();
-
   const { uid } = useAuthContext;
+  const { user } = useAuthContext();
   const {
     state: {
+      product,
       product: { id, image, title, description, category, price, options },
     },
   } = useLocation();
@@ -21,7 +24,9 @@ function ProductDetail() {
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {
     const product = { id, image, title, price, option: selected, quantity: 1 };
+
     addOrUpdateToCart(uid, product);
+
     addOrUpdateItem.mutate(product, {
       onSuccess: () => {
         setSuccess("장바구니에 추가되었습니다");
@@ -29,9 +34,24 @@ function ProductDetail() {
       },
     });
   };
+
+  const DeleteClick = (e) => {
+    if (window.confirm("게시글을 삭제하시겠습니까?")) {
+      deleteProduct(id);
+      window.location.replace("/");
+    } else {
+      return;
+    }
+  };
+  const ModifyClick = (e) => {
+    if (window.confirm("게시글을 수정하시겠습니까?")) {
+      navigate(`/products/modify/${id}`, { state: { product } });
+    } else {
+      return;
+    }
+  };
   return (
     <>
-      <D.Category>{category}</D.Category>
       <D.Section>
         <D.Img src={image} alt={title}></D.Img>
         <D.Article>
@@ -54,11 +74,27 @@ function ProductDetail() {
             width="100%"
             onClick={handleClick}
           ></Button>
+
+          {user && user.isAdmin && (
+            <FlexBox>
+              <D.ModifyButton onClick={ModifyClick}>
+                <D.Modify></D.Modify>
+              </D.ModifyButton>
+
+              <D.DeleteButton onClick={DeleteClick}>
+                <D.Delete></D.Delete>
+              </D.DeleteButton>
+            </FlexBox>
+          )}
         </D.Article>
       </D.Section>
     </>
   );
 }
+
+const FlexBox = styled.div`
+  display: flex;
+`;
 
 //D는 Detail
 const D = {
@@ -126,6 +162,30 @@ const D = {
     margin: 0.5rem 0;
     text-align: center;
     color: red;
+  `,
+
+  DeleteButton: styled.button`
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2rem;
+    cursor: pointer;
+  `,
+
+  Delete: styled(MdDeleteForever)`
+    font-size: 2rem;
+  `,
+
+  ModifyButton: styled.button`
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2rem;
+    cursor: pointer;
+  `,
+
+  Modify: styled(BsPencilSquare)`
+    font-size: 2rem;
   `,
 };
 
