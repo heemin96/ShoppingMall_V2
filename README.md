@@ -69,13 +69,13 @@
 - 좋았던 점
 <p align="justify">
   
-1. Firebase api를 사용해 데이터 저장,수정,삭제 경험
+1. Firebase api를 경험
 
-2. cloudinary api 사용해 이미지 업로드 
+2. Cloudinary api 경험
 
-3. react query mutation 을 사용해 실시간 데이터 관리 
+3. React query mutation을 사용해 실시간 데이터 관리 
 
-4. react 컨벤션, 폴더링, 컴포넌트 구조 등 전보다 개념적 지식 구체적 확립
+4. React 컨벤션, 폴더링, 컴포넌트 구조 등 전보다 개념적 지식 구체적 확립
 </p>
 
 <br/>
